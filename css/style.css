@@ -1,0 +1,338 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Jakarta";
+  src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: " Jakarta Italic";
+  src: url("../assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+}
+
+:root {
+  /* ### Primary */
+
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+
+  /* ### Neutral */
+
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-900: hsl(202, 55%, 16%);
+}
+
+body {
+  font-family: "Jakarta", sans-serif;
+  background-color: var(--Slate-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 5px; /* Height of the scrollbar for horizontal scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Handle color */
+  border-radius: 10px; /* Round the corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Handle color on hover */
+}
+
+label {
+  color: var(--Slate-700);
+  font-size: calc(0.8rem + 0.3vw);
+}
+
+label:not([for="interest"], [for="repayment"]) {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  padding-left: 10px;
+  background: transparent;
+  font-weight: bolder;
+  color: var(--Slate-900);
+}
+
+input[type="radio"]:checked {
+  background-color: var(--Lime);
+}
+
+input:not([type="radio"]) {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.hr {
+  background-color: var(--Slate-700);
+  height: 1px;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.container {
+  width: clamp(300px, 90%, 900px);
+  min-height: 50vh;
+  display: flex;
+  background-color: var(--White);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.leftContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title h1 {
+  font-size: calc(1rem + 1vw);
+  color: var(--Slate-900);
+}
+
+.title button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-decoration: underline;
+  color: var(--Slate-300);
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.error.active {
+  display: block;
+}
+
+.input_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  border: 1.5px solid var(--Slate-300);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.input_container span {
+  height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Slate-100);
+  color: var(--Slate-500);
+}
+
+.input_container.activeSpan {
+  border: 1px solid var(--Red);
+}
+
+.input_container.activeSpan span {
+  background-color: var(--Red);
+}
+
+.input_container input {
+  height: 100%;
+  width: 100%;
+}
+
+.input_container:hover {
+  border: 1px solid var(--Slate-900);
+}
+
+.clicked,
+.clicked:hover {
+  border: 1px solid var(--Lime);
+}
+
+.clicked.input_container span {
+  background-color: var(--Lime);
+}
+
+.radio_container {
+  height: 40px;
+  width: 100%;
+  border: 1.5px solid var(--Slate-300);
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 10px;
+}
+
+.checked {
+  background-color: hsla(61, 70%, 52%, 20%);
+}
+
+.radio_container:hover {
+  border: 1px solid var(--Lime);
+}
+
+.radio_container span {
+  font-weight: 700;
+  color: var(--Slate-500);
+}
+.btn {
+  width: 70%;
+  height: 50px;
+  border-radius: 30px;
+  background-color: var(--Lime);
+  color: var(--Slate-900);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.rightContainer {
+  width: 50%;
+  background-color: var(--Slate-900);
+  padding: 2rem;
+  border-radius: 0px 0px 0px 50px;
+}
+
+.firstResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  gap: 1rem;
+  display: none;
+}
+
+.firstResultTitle {
+  color: var(--White);
+}
+.firstResultText {
+  color: var(--Slate-300);
+  font-size: 12px;
+}
+
+.secondResult {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+  display: none;
+}
+
+.secondResultTitle {
+  color: var(--White);
+}
+
+.secondResultDesc {
+  color: var(--Slate-500);
+  font-size: 13px;
+  margin-bottom: 1.5rem;
+}
+
+.resultBox {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.145);
+  border-radius: 10px;
+  border-top: 5px solid var(--Lime);
+  min-height: 50%;
+  padding: calc(0.5rem + 0.5vw);
+}
+
+.secondResultText {
+  color: var(--Slate-500);
+  font-size: 14px;
+  margin-block: 1.4vh;
+}
+
+.topResult {
+  color: var(--Lime);
+  font-size: clamp(1rem, 2vw + 1rem, 3rem); /* Adjust values as needed */
+  overflow: auto;
+}
+.bottomResult {
+  color: var(--White);
+  overflow: auto;
+  margin-top: 10px;
+  font-size: large;
+}
+
+.activeResult {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0px;
+  }
+  .leftContainer {
+    width: 100%;
+  }
+  .rightContainer {
+    width: 100%;
+    border-radius: 0px;
+    padding-bottom: 100px;
+  }
+  .flex {
+    flex-wrap: wrap;
+  }
+  .btn {
+    width: 100%;
+  }
+}
