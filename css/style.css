@@ -62,6 +62,7 @@ body {
 label {
   color: var(--Slate-700);
   font-size: calc(0.8rem + 0.3vw);
+  font-weight: 700;
 }
 
 label:not([for="interest"], [for="repayment"]) {
@@ -172,6 +173,7 @@ input:not([type="radio"]) {
   justify-content: center;
   background-color: var(--Slate-100);
   color: var(--Slate-500);
+  font-weight: 700;
 }
 
 .input_container.activeSpan {
